@@ -6,7 +6,9 @@
     </div>
     <figcaption class="result__text">
       <h2  class="result__text_title">{{ result.name }}</h2>
-      <p>{{ result.price_from }}</p>
+      <p class="result__text_price">
+        <img src="src/assets/money.svg" alt="price" class="result__text_money">
+        {{ result.price_from }}</p>
     </figcaption>
   </figure>
 
@@ -61,10 +63,20 @@ export default defineComponent ({
 }
 
 .result__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 20px 10px;
+  height: calc(100% - 200px);
 }
 
 .result__text_title{
   margin-bottom: 5px;
+}
+
+.result__text_price {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
 }
 </style>

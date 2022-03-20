@@ -22,40 +22,8 @@ export default defineComponent ({
     }
   },
   async created() {
-    const {results} = (await ProductsService.getAllProducts()).data;
-    console.log(results);
+    const { results } = (await ProductsService.getAllProducts()).data;
     this.resultsList = results;
   }
 })
 </script>
-
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  background-color: #f7f8fc;
-  font-family: "Roboto", sans-serif;
-  color: #10182f;
-}
-
-.container {
-  max-width: 1300px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.h1 {
-  margin: 60px 0 50px;
-}
-
-.results {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-</style>
