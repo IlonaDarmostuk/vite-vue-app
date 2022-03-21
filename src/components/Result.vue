@@ -1,30 +1,33 @@
 <template>
-
   <figure class="result">
     <div class="result-img-wrap">
-      <img :src="result.preview_image" :alt="result.name" class="result__img">
+      <img :src="result.preview_image" :alt="result.name" class="result__img" />
     </div>
     <figcaption class="result__text">
-      <h2  class="result__text_title">{{ result.name }}</h2>
+      <h2 class="result__text_title">{{ result.name }}</h2>
       <p class="result__text_price">
-        <img src="src/assets/money.svg" alt="price" class="result__text_money">
-        {{ result.price_from }}</p>
+        <img
+          :src="require('/assets/money.svg')"
+          alt="price"
+          class="result__text_money"
+        />
+        {{ result.price_from }}
+      </p>
     </figcaption>
   </figure>
-
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import { IProduct } from '../interfaces/products.interface';
 
-export default defineComponent ({
+export default defineComponent({
   props: {
     result: {
       type: Object as PropType<IProduct>,
       required: true,
     },
   },
-})
+});
 </script>
 <style scoped>
 .result {
@@ -36,7 +39,7 @@ export default defineComponent ({
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 300px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .result:hover {
@@ -44,7 +47,7 @@ export default defineComponent ({
   cursor: pointer;
 }
 
-.result:hover .result__img{
+.result:hover .result__img {
   transform: scale(1.1);
 }
 
@@ -59,10 +62,10 @@ export default defineComponent ({
   object-position: center;
   height: 100%;
   width: 100%;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-.result__text{
+.result__text {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -70,7 +73,7 @@ export default defineComponent ({
   height: calc(100% - 200px);
 }
 
-.result__text_title{
+.result__text_title {
   margin-bottom: 5px;
 }
 
