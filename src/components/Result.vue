@@ -7,7 +7,7 @@
       <h2 class="result__text_title">{{ result.name }}</h2>
       <p class="result__text_price">
         <img
-          :src="require('/assets/money.svg')"
+          src="../assets/money.svg"
           alt="price"
           class="result__text_money"
         />
